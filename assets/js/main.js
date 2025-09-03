@@ -1,5 +1,4 @@
 
-
 // Tabs JS
 document.addEventListener("DOMContentLoaded", function () {
   const tabLinks = document.querySelectorAll(".tabs-skincare-essentials-main-wrapper .tab-button");
@@ -37,6 +36,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+
+
+
+
+
+
+
 
 
 

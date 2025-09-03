@@ -2,13 +2,13 @@
 START: Theme Default CSS
 ----------------------------------------*/
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
   /**
      @Font-Family Declaration
    */
-  --sds-ff-body: 'Inter', sans-serif;
+  --sds-ff-body: 'Montserrat', sans-serif;
   --sds-ff-heading: 'Montserrat', sans-serif;
 }
 
@@ -55,23 +55,23 @@ h1 {
 }
 
 h2 {
-  font-size: 16px;
+  font-size: 26px;
 }
 
 h3 {
-  font-size: 15px;
+  font-size: 25px;
 }
 
 h4 {
-  font-size: 15px;
+  font-size: 20px;
 }
 
 h5 {
-  font-size: 15px;
+  font-size: 18px;
 }
 
 h6 {
-  font-size: 15px;
+  font-size: 16px;
 }
 
 h1 a,
@@ -287,20 +287,72 @@ ul {
   padding-right: 15px;
 }
 
+/* Button CSS */
+.primary-cart-btn {
+  display: block;
+  font-size: 15px;
+  width: 100%;
+  color: #fff;
+  background: #B9927A;
+  border: none;
+  position: relative;
+  padding: 14px 15px;
+  height: 43px;
+  line-height: 1;
+}
+
+.primary-cart-btn .btn-loading {
+  width: 15px;
+  height: 15px;
+  border: 2px solid #ffffff;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+  display: none;
+}
+
+.primary-cart-btn .btn-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.primary-cart-btn.loading .btn-text {
+  display: none;
+}
+
+.primary-cart-btn.loading .btn-loading {
+  display: inline-block;
+}
+
+.primary-cart-btn:hover {
+  background-color: #8b7161;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 /**----------------------------------------
 START: Header CSS
 ----------------------------------------*/
 
-.header-skincare-essentials-area {
+.header-camera-composite-products-area {
   position: relative;
-  background-color: #ffffff;
+  background-color: #252525;
   box-shadow: 0px 2px 2px 0px #00000012;
   padding: 23px 0;
   transition: all 0.3s ease-in-out;
   z-index: 98;
 }
 
-.header-skincare-essentials-menu-wrapper {
+.header-camera-composite-products-menu-wrapper {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -339,8 +391,7 @@ START: Header CSS
   align-items: center;
   column-gap: 10px;
   font-size: 14px;
-  color: #121212;
-  letter-spacing: 0.55px;
+  color: #ffffff;
   word-break: break-word;
 }
 
@@ -381,55 +432,3 @@ START: Header CSS
 }
 
 /* !END: Header CSS *
-
-/**----------------------------------------
-START: Skincare Essentials CSS
-----------------------------------------*/
-.tabs-skincare-essentials-section {
-  padding-top: 54px;
-}
-
-.tabs-skincare-essentials-section .heading-area {
-  text-align: center;
-}
-
-.tabs-skincare-essentials-section .heading-area .tabs-skincare-essentials-subtitle {
-  display: block;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-  margin-bottom: 10px;
-}
-
-.tabs-skincare-essentials-menu {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  column-gap: 10px;
-  margin-top: 22px;
-}
-
-.tabs-skincare-essentials-menu .tab-button {
-  background-color: #FFEBE0;
-}
-
-.tabs-skincare-essentials-menu .tab-button.active {
-  background-color: #E09A73;
-}
-
-.tabs-skincare-essentials-menu li a {
-  display: inline-block;
-  font-size: 15px;
-  padding: 12px 55px;
-}
-
-.tabs-skincare-essentials-main-wrapper .tabs-skincare-essentials-main-wrap {
-  display: none;
-}
-
-.tabs-skincare-essentials-main-wrapper div.active {
-  display: block;
-}
-
-/* !END: Skincare Essentials CSS *
