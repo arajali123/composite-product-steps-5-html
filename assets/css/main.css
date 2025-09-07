@@ -513,16 +513,44 @@ START: Composite Products Cards CSS
 }
 
 .tabs-cart-item {
+  position: relative;
   background: #ffffff;
   padding: 24px 24px;
 }
 
 .tabs-cart-item .tabs-cart-images {
+  position: relative;
   margin-bottom: 42px;
+  overflow: hidden;
 }
 
 .tabs-cart-item .tabs-cart-images a {
-  display: flex;
+  display: inline-flex;
+}
+
+.tabs-cart-item .tabs-cart-images a img {
+  width: 100%;
+}
+
+.tabs-cart-item .tabs-cart-images a .second-images {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.05);
+  will-change: transform;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.tabs-cart-item:hover .tabs-cart-images a .second-images {
+  transform: scale(1);
+  opacity: 1;
+  visibility: visible;
 }
 
 .tabs-cart-item .tabs-cart-content .cart-title {
