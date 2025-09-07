@@ -319,6 +319,10 @@ ul {
   line-height: 1;
 }
 
+.add-btn:hover {
+  background-color: #121212;
+}
+
 /**----------------------------------------
 START: Header CSS
 ----------------------------------------*/
@@ -423,6 +427,7 @@ START: Composite Products Cards CSS
 .composite-product-cards-menu {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+  column-gap: 10px;
   text-align: center;
 }
 
@@ -520,7 +525,7 @@ START: Composite Products Cards CSS
 
 .tabs-cart-item .tabs-cart-images {
   position: relative;
-  margin-bottom: 42px;
+  margin-bottom: 40px;
   overflow: hidden;
 }
 
