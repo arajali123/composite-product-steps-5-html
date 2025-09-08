@@ -336,6 +336,17 @@ START: Header CSS
   z-index: 98;
 }
 
+.header-camera-composite-products-area.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  animation: sticky 0.9s;
+  z-index: 999;
+  opacity: 1;
+  visibility: visible;
+}
+
 .header-camera-composite-products-menu-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -617,6 +628,21 @@ START: Composite Products Cards CSS
 
 .tabs-cart-item:nth-child(8) {
   animation: anim-8 0.9s ease-in-out 0s;
+}
+
+.composite-product-cards-sidebar {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  position: fixed;
+  top: 73px;
+  right: 0;
+  width: 380px;
+  height: calc(100vh - 74px);
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0px 17px 34px 0px #0000000D;
+  transition: all 0.3s ease-in-out 0s;
+  z-index: 9999;
 }
 
 /* products Keyframes CSS */

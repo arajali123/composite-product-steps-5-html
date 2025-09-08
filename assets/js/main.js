@@ -1,5 +1,17 @@
 
 // Tabs JS
+// Header Sticky Js
+document.addEventListener("DOMContentLoaded", function () {
+  var header = document.querySelector(".header-sticky");
+
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 0) {
+      header.classList.add("sticky");
+    } else {
+      header.classList.remove("sticky");
+    }
+  });
+});
 
 // document.addEventListener("DOMContentLoaded", function () {
 //   const tabLinks = document.querySelectorAll(".composite-product-cards-menu .tab-button");
