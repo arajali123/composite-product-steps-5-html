@@ -337,7 +337,7 @@ ul {
   font-size: 15px;
   font-weight: 400;
   color: #ffffff;
-  background: #12121299;
+  background: #121212;
   padding: 16px 45px;
   text-align: center;
   line-height: 1;
@@ -345,11 +345,29 @@ ul {
 
 .cart-btn:hover {
   color: #ffffff;
-  background-color: #121212;
 }
 
 .cart-btn:focus {
   color: #ffffff;
+}
+
+.toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 43px;
+  height: 43px;
+  background: #FF6E26;
+}
+
+@media (max-width: 575px) {
+  .view-btn {
+    padding: 12px 12px;
+  }
+
+  .add-btn {
+    padding: 12px 12px;
+  }
 }
 
 /**----------------------------------------
@@ -455,11 +473,28 @@ START: Header CSS
   right: -6px;
 }
 
+@media (max-width: 767px) {
+  .nav-menu-area {
+    display: none;
+  }
+}
+
 /* !END: Header CSS *
 
 /**----------------------------------------
 START: Composite Products Cards CSS
 ----------------------------------------*/
+.composite-product-cards-section {
+  position: relative;
+}
+
+.composite-product-cards-section .toggle-btn {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+}
+
 .composite-product-cards-main-wrapper {
   padding-top: 63px;
 }
@@ -482,7 +517,6 @@ START: Composite Products Cards CSS
   left: 50%;
   width: 100%;
   height: 1px;
-  transform: translateY(-50%);
   background: rgba(4, 4, 4, 0.1);
 }
 
@@ -546,7 +580,7 @@ START: Composite Products Cards CSS
 }
 
 .composite-product-cards-main-wrapper div.active {
-  display: block;
+  display: grid;
 }
 
 .tabs-cards-main-wrap .tabs-cart-item-wrap {
@@ -664,7 +698,7 @@ START: Composite Products Cards CSS
   grid-template-rows: auto 1fr auto;
   position: fixed;
   top: 73px;
-  right: 0;
+  right: -420px;
   width: 380px;
   height: calc(100vh - 74px);
   overflow: hidden;
@@ -674,20 +708,38 @@ START: Composite Products Cards CSS
   z-index: 9999;
 }
 
-.composite-product-cards-sidebar .product-title {
+.composite-product-cards-sidebar.active {
+  right: 0;
+}
+
+.composite-product-cards-sidebar .product-top-header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   column-gap: 12px;
-  font-weight: 700;
   border-bottom: 2px solid #E5E5E5;
   padding: 25px 22px;
   line-height: 28px;
 }
 
-.composite-product-cards-sidebar .product-title .select-number {
+.composite-product-cards-sidebar .product-top-header .product-title {
+  font-weight: 700;
+}
+
+.composite-product-cards-sidebar .product-top-header .product-title .select-number {
   color: #121212;
   font-size: 16px;
   font-weight: 400;
+}
+
+.composite-product-cards-sidebar .product-top-header .close-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  background: #121212;
+  border-radius: 50%;
 }
 
 .composite-product-cards-sidebar .choose-text {
@@ -748,6 +800,10 @@ START: Composite Products Cards CSS
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
+}
+
+.cart-sidebar-item .cart-sidebar-content .cart-sidebar-text .cart-title a:hover {
+  color: #FF6E26;
 }
 
 .cart-sidebar-item .cart-sidebar-content .cart-sidebar-text .cart-list {
@@ -885,10 +941,105 @@ START: Composite Products Cards CSS
   align-self: center;
   column-gap: 20px;
   row-gap: 15px;
+  margin-top: 29px;
 }
 
 .cart-sidebar-bottom .cart-sidebar-button .cart-btn {
   width: 100%;
+}
+
+.cart-sidebar-bottom.style-2 .cart-price {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cart-sidebar-bottom.style-2 .cart-price .discount {
+  display: inline-block;
+  position: relative;
+  font-weight: 400;
+}
+
+.cart-sidebar-bottom.style-2 .cart-price .discount::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 1px;
+  top: 50%;
+  left: 0;
+  background: #121212;
+}
+
+.cart-sidebar-bottom.style-2 .cart-price .save {
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+  background: #27A553;
+  padding: 7px 10px;
+  line-height: 1;
+}
+
+@media (max-width: 1399px) {
+  .tabs-cart-item {
+    padding: 24px 20px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .tabs-cart-item {
+    padding: 20px 20px;
+  }
+
+  .tabs-cart-item .tabs-cart-images {
+    margin-bottom: 20px;
+  }
+
+  .tabs-cards-main-wrap .tabs-cart-item-wrap {
+    padding-bottom: 120px;
+  }
+}
+
+@media (max-width: 991px) {
+  .tabs-cards-main-wrap .tabs-cart-item-wrap {
+    grid-template-columns: repeat(3, 1fr);
+    padding-bottom: 100px;
+  }
+
+  .composite-product-cards-menu {
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    justify-content: start;
+    scrollbar-color: rgba(18, 18, 18, 0.2) rgba(18, 18, 18, 0.2);
+    scrollbar-width: thin;
+  }
+}
+
+@media (max-width: 767px) {
+  .tabs-cards-main-wrap .tabs-cart-item-wrap {
+    grid-template-columns: repeat(2, 1fr);
+    padding-bottom: 54px;
+  }
+}
+
+@media (max-width: 575px) {
+  .composite-product-cards-sidebar {
+    width: 320px;
+  }
+
+  .tabs-cart-item {
+    padding: 20px 15px;
+  }
+
+  .composite-product-cards-menu li .tab-button .tab-list {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+
+  .composite-product-cards-menu li::before {
+    top: 18px;
+  }
 }
 
 /* products Keyframes CSS */
