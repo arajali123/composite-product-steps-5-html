@@ -645,6 +645,22 @@ START: Composite Products Cards CSS
   z-index: 9999;
 }
 
+.composite-product-cards-sidebar .product-title {
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+  font-weight: 700;
+  border-bottom: 2px solid #E5E5E5;
+  padding: 25px 22px;
+  line-height: 28px;
+}
+
+.composite-product-cards-sidebar .product-title .select-number {
+  color: #121212;
+  font-size: 16px;
+  font-weight: 400;
+}
+
 /* products Keyframes CSS */
 @keyframes anim-1 {
   0% {
