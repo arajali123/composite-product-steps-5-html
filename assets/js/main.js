@@ -74,6 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+
 // Counter Js
 document.querySelectorAll('.counter-cart-box').forEach(counter => {
   const minus = counter.querySelector('.minus');
@@ -93,6 +94,13 @@ document.querySelectorAll('.counter-cart-box').forEach(counter => {
     number.textContent = count;
   });
 });
+
+
+
+
+
+
+
 
 
 

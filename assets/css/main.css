@@ -368,6 +368,10 @@ ul {
   .add-btn {
     padding: 12px 12px;
   }
+
+  .cart-btn {
+    padding: 15px 20px;
+  }
 }
 
 /**----------------------------------------
@@ -1031,14 +1035,12 @@ START: Composite Products Cards CSS
     padding: 20px 15px;
   }
 
-  .composite-product-cards-menu li .tab-button .tab-list {
-    width: 35px;
-    height: 35px;
-    font-size: 16px;
+  .composite-product-cards-menu li::before {
+    width: 135%;
   }
 
-  .composite-product-cards-menu li::before {
-    top: 18px;
+  .cart-sidebar-item .cart-sidebar-content {
+    column-gap: 10px;
   }
 }
 
